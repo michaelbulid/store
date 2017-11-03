@@ -2,11 +2,11 @@
   <li class="goods-list">
     <router-link to="/detail" class="goods-list-link">
       <div class="goods-list-pic">
-        ![](img)
+        <img :src="img" alt="">
       </div>
       <div class="goods-list-desc">
         <p class="goods-list-name">{{title}}</p>
-        <p class="goods-list-price">{{ price | dtofixed | dcurrency}}</p>
+        <p class="goods-list-price">{{ price | dTofixed | dCurrency}}</p>
       </div>
     </router-link>
   </li>

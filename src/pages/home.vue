@@ -3,20 +3,20 @@
     <home-header></home-header>
     <div class="content">
       <ul class="cont-ul">
-        <list v-for="item in items" :price="item.price" :title="item.title" :img="item.img"></list>
+        <list v-for="item in items" :price="item.price" :title="item.title" :img="item.img" :key="item.id"></list>
       </ul>
     </div>
     <common-footer></common-footer>
   </div>
 </template>
 <script>
-import HomeHeader from "../components/homeHeader"
-import CommonFooter from "../components/commonFooter"
+import HomeHeader from '../components/homeHeader'
+import CommonFooter from '../components/commonFooter'
 import List from '../components/list'
 export default {
   data () {
     return {
-      itmes: []
+      items: []
     }
   },
   components: {
@@ -26,7 +26,8 @@ export default {
   },
   created () {
     this.$http.get('/api/goods').then((data) => {
-      this.items = data.body.data;
+      console.log(data)
+      this.items = data.body.data
     })
   }
 }
